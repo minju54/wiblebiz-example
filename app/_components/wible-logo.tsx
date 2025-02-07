@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 
+// 헤더 로고
 const WibleLogo = () => {
   return (
     <div className="flex items-center">

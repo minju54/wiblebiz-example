@@ -5,6 +5,7 @@ import FAQTabContainer from './_components/faq-tab-container';
 import ProcessInformationContainer from './_components/process-information-container';
 import ServiceContainer from './_components/service-container';
 
+// FAQ 페이지
 const FAQPage = () => {
   return (
     <div>
