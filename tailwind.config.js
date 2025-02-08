@@ -26,21 +26,21 @@ module.exports = {
         md: '1024px', // 1024px 이상
         lg: '1440px', // 1440px 이상
       },
-      fontSize: {
-        base: '16px',
-        14: '14px',
-        16: '16px',
-        18: '18px',
-        24: '24px',
-        40: '40px',
-        48: '48px',
-        56: '56px',
-      },
-      lineHeight: {
-        sm: '1.4',
-        md: '1.6',
-        lg: '1.8',
-      },
+      // fontSize: {
+      //   base: '16px',
+      //   14: '14px',
+      //   16: '16px',
+      //   18: '18px',
+      //   24: '24px',
+      //   40: '40px',
+      //   48: '48px',
+      //   56: '56px',
+      // },
+      // lineHeight: {
+      //   sm: '1.4',
+      //   md: '1.6',
+      //   lg: '1.8',
+      // },
       transitionTimingFunction: {
         primary: 'cubic-bezier(1, 0, 0.2, 1)',
       },
