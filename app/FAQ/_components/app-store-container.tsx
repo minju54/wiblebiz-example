@@ -4,7 +4,7 @@ import LinkButton from './button/link-button';
 // 앱 스토어 안내 컴포넌트
 const AppStoreContainer = () => {
   const linkButtonClassName =
-    'min-h-[48px] w-[264px] flex-1 justify-center rounded-lg border-none bg-white text-sm font-semibold sm:h-[56px] sm:text-base md:w-[296px]';
+    'flex items-center min-h-[48px] w-[264px] flex-1 justify-center rounded-lg border-none bg-white text-sm font-semibold sm:h-[56px] sm:text-base md:w-[296px]';
   const iconClassName = 'w-[24px] sm:w-[28px]';
 
   const APP_STORE_URL = {

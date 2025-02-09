@@ -23,7 +23,7 @@ const ServiceInquiryContainer = () => {
           icon="/icons/ic_download.svg"
           alt="Download Icon"
           onClick={handleDownload}
-          className="min-h-[var(--btn-xxlg)] border border-midnight-900 pl-[20px] sm:flex-1 sm:pl-0"
+          className="flex min-h-[var(--btn-xxlg)] items-center border border-midnight-900 pl-[20px] sm:flex-1 sm:justify-center sm:pl-0"
           iconClassName="mr-2 w-[var(--ic-lg)]"
         >
           <span className="font-bold">상품 제안서 다운로드</span>
@@ -31,7 +31,7 @@ const ServiceInquiryContainer = () => {
         <LinkButton
           icon="/icons/ic_write.svg"
           alt="Write Icon"
-          className="min-h-[var(--btn-xxlg)] border border-midnight-900 pl-[20px] sm:flex-1 sm:pl-0"
+          className="flex min-h-[var(--btn-xxlg)] items-center border border-midnight-900 pl-[20px] sm:flex-1 sm:justify-center sm:pl-0"
           iconClassName="mr-2 w-[var(--ic-lg)]"
         >
           <span className="font-bold">상담 문의 등록하기</span>
@@ -42,7 +42,7 @@ const ServiceInquiryContainer = () => {
           href={KAKAO_INQUIRY_URL}
           target="_blank"
           rel="noreferrer"
-          className="min-h-[var(--btn-xxlg)] flex-1 border border-midnight-900 pl-[20px] sm:min-w-[calc(100%-var(--space-md))] sm:pl-0 md:min-w-[20px]"
+          className="flex min-h-[var(--btn-xxlg)] flex-1 items-center border border-midnight-900 pl-[20px] sm:min-w-[calc(100%-var(--space-md))] sm:justify-center sm:pl-0 md:min-w-[20px]"
           iconClassName="mr-2 w-[var(--ic-lg)]"
         >
           <div className="flex flex-col">

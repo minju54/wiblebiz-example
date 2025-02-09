@@ -19,6 +19,7 @@ const FAQPage = () => {
       <ProcessInformationContainer />
       {/* 앱 스토어 이동 */}
       <AppStoreContainer />
+      {/* 위로가기 floating 버튼 */}
     </div>
   );
 };
