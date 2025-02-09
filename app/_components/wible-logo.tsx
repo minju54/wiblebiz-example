@@ -7,7 +7,7 @@ const WibleLogo = () => {
       <img
         src="/logo/logo_wible_sm.svg"
         alt="Wible Biz Logo"
-        className="h-[40px] w-[120px]"
+        className="h-[40px] w-[120px] md:h-full md:w-[160px]"
       />
     </div>
   );

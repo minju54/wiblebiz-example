@@ -17,9 +17,10 @@ const AppStoreContainer = () => {
   return (
     <div className="mt-[42px] flex flex-col flex-wrap items-center justify-center overflow-hidden rounded-2xl bg-gray-10 p-6 sm:p-8">
       <h2 className="mb-[24px] text-xl">
-        <strong>
-          <span className="text-mint-900">위블 비즈 App</span> 지금 만나보세요!
-        </strong>
+        <b>
+          <span className="font-bold text-mint-900">위블 비즈 App</span> 지금
+          만나보세요!
+        </b>
       </h2>
       <div className="flex flex-col space-y-3 sm:flex-row sm:space-x-3 sm:space-y-0">
         <LinkButton

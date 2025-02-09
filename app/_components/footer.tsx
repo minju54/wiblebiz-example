@@ -4,10 +4,7 @@ import LinkButton from '../FAQ/_components/button/link-button';
 const Footer = () => {
   return (
     <footer className="relative bottom-0 left-0 bg-midnight-900 px-[var(--side-padding)] text-gray-400">
-      <div
-        className="flex max-w-[var(--max-width)] flex-col pb-[29px] pt-[18px] md:h-[var(--footer-height)] md:flex-row-reverse md:items-center md:justify-between"
-        // style={{ fontSize: 'var(font-size)', lineHeight: 'var(--line-height)' }}
-      >
+      <div className="flex max-w-[var(--max-width)] flex-col pb-[29px] pt-[18px] md:h-[var(--footer-height)] md:flex-row-reverse md:items-center md:justify-between">
         <div>
           {/* 개인정보 처리방침 */}
           <div className="mb-2 flex md:mb-0 md:justify-end">

@@ -13,7 +13,7 @@ const TitleHeader = ({ title }: TitleHeaderProps) => {
         lineHeight: 'var(--line-height-sm)',
       }}
     >
-      <strong>{title}</strong>
+      <b>{title}</b>
     </h2>
   );
 };

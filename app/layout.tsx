@@ -1,18 +1,8 @@
 import type { Metadata } from 'next';
-import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
+import '../public/fonts/styles.css';
 import Footer from './_components/footer';
 import Header from './_components/header';
-
-const geistSans = Geist({
-  variable: '--font-geist-sans',
-  subsets: ['latin'],
-});
-
-const geistMono = Geist_Mono({
-  variable: '--font-geist-mono',
-  subsets: ['latin'],
-});
 
 export const metadata: Metadata = {
   title: '서비스 도입 FAQ | 위블 비즈(Wible Biz) - 친환경 모빌리티 서비스',
@@ -29,9 +19,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko" className="flex min-h-screen flex-col">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={'font-KiaSignatureFix antialiased'}>
         <Header />
         <main className="mb-[80px] flex-1 overflow-auto px-[var(--side-padding)]">
           {children}
