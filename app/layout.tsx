@@ -28,12 +28,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko" className="flex flex-col min-h-screen">
+    <html lang="ko" className="flex min-h-screen flex-col">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <Header />
-        <main className="flex-1 overflow-auto px-[var(--side-padding)]">
+        <main className="mb-[80px] flex-1 overflow-auto px-[var(--side-padding)]">
           {children}
         </main>
         <Footer />

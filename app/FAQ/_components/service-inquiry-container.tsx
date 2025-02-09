@@ -18,20 +18,21 @@ const ServiceInquiryContainer = () => {
   return (
     <div>
       <TitleHeader title={'서비스 문의'} />
-
       <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-6 md:flex-nowrap">
         <LinkButton
           icon="/icons/ic_download.svg"
           alt="Download Icon"
           onClick={handleDownload}
-          className="sm:flex-1"
+          className="min-h-[var(--btn-xxlg)] border border-midnight-900 pl-[20px] sm:flex-1 sm:pl-0"
+          iconClassName="mr-2 w-[var(--ic-lg)]"
         >
           <span className="font-bold">상품 제안서 다운로드</span>
         </LinkButton>
         <LinkButton
           icon="/icons/ic_write.svg"
           alt="Write Icon"
-          className="sm:flex-1"
+          className="min-h-[var(--btn-xxlg)] border border-midnight-900 pl-[20px] sm:flex-1 sm:pl-0"
+          iconClassName="mr-2 w-[var(--ic-lg)]"
         >
           <span className="font-bold">상담 문의 등록하기</span>
         </LinkButton>
@@ -41,7 +42,8 @@ const ServiceInquiryContainer = () => {
           href={KAKAO_INQUIRY_URL}
           target="_blank"
           rel="noreferrer"
-          className="flex-1 border sm:min-w-[calc(100%-var(--space-md))] md:min-w-[20px]"
+          className="min-h-[var(--btn-xxlg)] flex-1 border border-midnight-900 pl-[20px] sm:min-w-[calc(100%-var(--space-md))] sm:pl-0 md:min-w-[20px]"
+          iconClassName="mr-2 w-[var(--ic-lg)]"
         >
           <div className="flex flex-col">
             <span className="font-bold">카톡으로 문의하기</span>

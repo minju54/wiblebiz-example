@@ -7,6 +7,7 @@ type LinkButtonProps = {
   target?: string;
   rel?: string;
   className?: string;
+  iconClassName?: string;
   children: ReactNode;
   onClick?: () => void;
 };
@@ -18,12 +19,12 @@ const LinkButton = ({
   target,
   rel,
   className,
+  iconClassName,
   children,
   onClick,
   ...rest
 }: LinkButtonProps) => {
-  const aTagClassName =
-    'cursor-pointer flex border border-midnight-900 min-h-[var(--btn-xxlg)] items-center  sm:justify-center';
+  const aTagClassName = 'cursor-pointer flex items-center sm:justify-center';
 
   return (
     <a
@@ -34,7 +35,7 @@ const LinkButton = ({
       rel={rel}
       {...rest}
     >
-      <img src={icon} alt={alt} className="mr-2 w-[32px]" />
+      <img src={icon} alt={alt} className={iconClassName} />
       {children}
     </a>
   );
