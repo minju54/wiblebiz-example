@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { FAQ_DATA_LIST } from '@/app/mock/faq-data';
-import { ChevronDownIcon, ChevronUpIcon } from '@radix-ui/react-icons';
 import parse from 'html-react-parser';
 
+// FAQ 리스트 컴포넌트
 const FAQList = () => {
   const ITEMS_PER_PAGE = 10;
 
@@ -25,7 +25,7 @@ const FAQList = () => {
             <h4 className={`${expandedIndex === index ?? 'bg-gray-10'}`}>
               <button
                 type="button"
-                className={`pr-[calc(var(--px-xlg) + 1.6em)] relative flex w-full flex-wrap items-center overflow-hidden py-[var(--faq-list-a-padding-v)] md:w-full md:flex-nowrap`}
+                className={`pr-[calc(var(--px-xlg) + 1.6em)] relative flex w-full flex-wrap items-center overflow-hidden py-[var(--faq-list-a-padding-v)] md:w-full md:flex-nowrap ${expandedIndex === index && 'bg-gray-10'}`}
                 style={{ fontSize: 'var(--faq-list-a-size)' }}
                 onClick={() => toggleExpand(index)}
               >
@@ -39,18 +39,21 @@ const FAQList = () => {
                 <strong className="flex min-w-full text-left sm:p-0 md:flex-1 md:pl-[var(--faq-list-a-padding-h)]">
                   {faqItem.question}
                 </strong>
-                {expandedIndex === index ? (
-                  <ChevronUpIcon className="absolute right-2 h-6 w-6 text-gray-500" />
-                ) : (
-                  <ChevronDownIcon className="absolute right-2 h-6 w-6 text-gray-500" />
-                )}
+                <img
+                  src="/icons/ic_arrow.svg"
+                  className={`absolute right-2 h-[var(--ic-md)] text-gray-500 transition-transform duration-700 ${expandedIndex === index ? 'rotate-180' : 'rotate-0'}`}
+                />
               </button>
             </h4>
-            {expandedIndex === index && (
-              <div className="bt-gray-100 leading-[var((--line-height-lg)] overflow-x-scroll border-t p-[var(--faq-list-q-padding)]">
+            <div
+              className={`overflow-hidden transition-all duration-1000 ease-in-out ${
+                expandedIndex === index ? 'max-h-[1000px]' : 'max-h-0'
+              }`}
+            >
+              <div className="bt-gray-100 overflow-x-scroll border-t p-[var(--faq-list-q-padding)] leading-[var(--line-height-lg)]">
                 {parse(faqItem.answer)}
               </div>
-            )}
+            </div>
           </li>
         ))}
       </ul>

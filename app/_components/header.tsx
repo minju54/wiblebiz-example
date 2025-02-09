@@ -1,15 +1,32 @@
-import React from 'react';
+'use client';
+import React, { useState, useEffect } from 'react';
 import GNB from './gnb';
 import HamburgerButton from './hamburger-button';
 import WibleLogo from './wible-logo';
 
 // 사이트 최상단 헤더 컴포넌트
 const Header = () => {
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <header className="sticky top-0 bg-white shadow-sm z-10">
-      <div className="flex px-[var(--side-padding)] h-[var(--header-height)]">
+    <header
+      className={`sticky top-0 z-10 bg-white ${isScrolled && 'shadow-[0_4px_32px_0_rgba(0,0,0,0.08)]'}`}
+    >
+      <div className="flex h-[var(--header-height)] px-[var(--side-padding)]">
         <WibleLogo />
-        <div className="flex items-center gap-4 ml-auto">
+        <div className="ml-auto flex items-center gap-4">
           <GNB />
           <HamburgerButton />
         </div>
