@@ -10,6 +10,9 @@ export default {
         background: 'var(--background)',
         foreground: 'var(--foreground)',
       },
+      fontFamily: {
+        KiaSignatureFix: ['KiaSignatureFix', 'sans-serif'],
+      },
     },
   },
   plugins: [],

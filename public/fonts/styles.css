@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'KiaSignatureFix';
+  src: url('KiaSignatureFixRegular.woff2') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'KiaSignatureFix';
+  src: url('KiaSignatureFixBold.woff2') format('truetype');
+  font-weight: 600;
+  font-style: bold;
+  font-display: swap;
+}
