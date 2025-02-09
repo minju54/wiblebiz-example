@@ -1,6 +1,6 @@
 import React from 'react';
 import AppStoreContainer from './_components/app-store-container';
-import FAQHeader from './_components/faq-header';
+import FAQHeader from './_components/header/faq-header';
 import FAQTabContainer from './_components/faq-tab-container';
 import ProcessInformationContainer from './_components/process-information-container';
 import ServiceInquiryContainer from './_components/service-inquiry-container';
