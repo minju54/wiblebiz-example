@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FAQ_DATA_LIST } from '@/app/mock/faq-data';
+import { FAQ_DATA_LIST } from '@/app/mocks/faq-data';
 import parse from 'html-react-parser';
 
 // FAQ 리스트 컴포넌트
@@ -22,7 +22,7 @@ const FAQList = () => {
       <ul className="border-t-2 border-midnight-900">
         {FAQ_DATA_LIST.slice(0, visibleCount).map((faqItem, index) => (
           <li key={index} className="border-b border-gray-100">
-            <h4 className={`${expandedIndex === index ?? 'bg-gray-10'}`}>
+            <h4 className={`${expandedIndex === index ? 'bg-gray-10' : ''}`}>
               <button
                 type="button"
                 className={`pr-[calc(var(--px-xlg) + 1.6em)] relative flex w-full flex-wrap items-center overflow-hidden py-[var(--faq-list-a-padding-v)] md:w-full md:flex-nowrap ${expandedIndex === index && 'bg-gray-10'}`}

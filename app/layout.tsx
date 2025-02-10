@@ -3,6 +3,7 @@ import './globals.css';
 import '../public/fonts/styles.css';
 import Footer from './_components/footer';
 import Header from './_components/header';
+import MSWWrapper from './_components/msw-wrapper';
 
 export const metadata: Metadata = {
   title: '서비스 도입 FAQ | 위블 비즈(Wible Biz) - 친환경 모빌리티 서비스',
@@ -22,7 +23,7 @@ export default function RootLayout({
       <body className={'font-KiaSignatureFix antialiased'}>
         <Header />
         <main className="mb-[80px] flex-1 overflow-auto px-[var(--side-padding)]">
-          {children}
+          <MSWWrapper>{children}</MSWWrapper>
         </main>
         <Footer />
       </body>
