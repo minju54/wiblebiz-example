@@ -1,7 +1,4 @@
-import {
-  UseInfiniteQueryOptions,
-  UseQueryOptions,
-} from '@tanstack/react-query';
+import { UseQueryOptions } from '@tanstack/react-query';
 
 export interface IFetchData {
   endpoint: string;
@@ -20,8 +17,8 @@ export interface IFetchInfineteData {
   pageParam?: number;
 }
 
-export interface IUseGetInfiniteQuery<TData>
-  extends UseInfiniteQueryOptions<TData> {
+// 커스텀 훅 useGetInfiniteQuery 인터페이스
+export interface IUseGetInfiniteQuery<TData> {
   queryKey: string[];
   endpoint: string;
   gcTime?: number;

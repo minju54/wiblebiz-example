@@ -4,8 +4,7 @@ import axios from 'axios';
 import { IFetchData, IUseGetQuery } from '../types/query';
 
 /**
- * NOTE 주어진 엔드포인트에서 데이터를 가져오는 비동기 함수
- * axiosInstance를 사용하여 GET 요청을 보냄
+ * 주어진 엔드포인트에서 데이터를 가져오는 비동기 함수
  * @param endpoint 데이터를 가져올 API 엔드포인트
  * @returns 응답 데이터(response.data)를 반환
  */
