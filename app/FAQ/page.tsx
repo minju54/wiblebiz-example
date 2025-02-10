@@ -5,11 +5,12 @@ import FAQTabContainer from './_components/faq-tab-container';
 import ProcessInformationContainer from './_components/process-information-container';
 import ServiceInquiryContainer from './_components/service-inquiry-container';
 import ScrollToTopButton from '../_components/scroll-to-top-button';
+import { FAQContextProvider } from './_components/context/faq-context-provider';
 
 // FAQ 페이지
-const FAQPage = () => {
+export default function FAQPage() {
   return (
-    <div>
+    <FAQContextProvider>
       {/* 헤더 */}
       <FAQHeader />
       {/* 탭 영역 */}
@@ -22,8 +23,6 @@ const FAQPage = () => {
       <AppStoreContainer />
       {/* 위로가기 floating 버튼 */}
       <ScrollToTopButton />
-    </div>
+    </FAQContextProvider>
   );
-};
-
-export default FAQPage;
+}
