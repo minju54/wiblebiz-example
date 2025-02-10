@@ -18,8 +18,8 @@ export interface ITab {
 
 // FAQ Context 타입
 export interface IFaqContext {
-  selectedTab: ITab | null;
-  setSelectedTab: Dispatch<SetStateAction<ITab | null>>;
+  selectedTab: ITab;
+  setSelectedTab: Dispatch<SetStateAction<ITab>>;
   selectedCategory: ICategoryItem | null;
   setSelectedCategory: Dispatch<SetStateAction<ICategoryItem | null>>;
 }

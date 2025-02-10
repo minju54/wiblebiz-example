@@ -1,16 +1,17 @@
 import type { Metadata } from 'next';
-import './globals.css';
+
 import '../public/fonts/styles.css';
 import Footer from './_components/footer';
 import Header from './_components/header';
 import MSWWrapper from './_components/msw-wrapper';
+import { META_DATA } from './constant/meta';
+import './globals.css';
+import QueryProvider from './query-provider';
 
 export const metadata: Metadata = {
-  title: '서비스 도입 FAQ | 위블 비즈(Wible Biz) - 친환경 모빌리티 서비스',
-  description:
-    '위블 비즈는 기업을 위한 친환경 모빌리티 서비스로 차량부터 전용 App/Web까지 업무차량 토탈 솔루션을 제공합니다.',
-  keywords:
-    '위블비즈,위블 비즈,모빌리티,구독서비스,차량구독,차량관리,업무용차량,법인차,관용차,전기차,FMS,스마트솔루션',
+  title: META_DATA.title,
+  description: META_DATA.description,
+  keywords: META_DATA.keywords,
 };
 
 export default function RootLayout({
@@ -21,11 +22,17 @@ export default function RootLayout({
   return (
     <html lang="ko" className="flex min-h-screen flex-col">
       <body className={'font-KiaSignatureFix antialiased'}>
-        <Header />
-        <main className="mb-[80px] flex-1 overflow-auto px-[var(--side-padding)]">
-          <MSWWrapper>{children}</MSWWrapper>
-        </main>
-        <Footer />
+        {/* 쿼리를 위한 컨텍스트 제공자 */}
+        <QueryProvider>
+          {/* 전역 헤더 컴포넌트 */}
+          <Header />
+          <main className="mb-[80px] flex-1 overflow-auto px-[var(--side-padding)]">
+            {/* Mock API 적용을 위한 Wrapper */}
+            <MSWWrapper>{children}</MSWWrapper>
+          </main>
+          {/* 전역 푸터 컴포넌트 */}
+          <Footer />
+        </QueryProvider>
       </body>
     </html>
   );

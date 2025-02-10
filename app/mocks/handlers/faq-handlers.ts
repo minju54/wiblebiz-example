@@ -7,18 +7,18 @@ export const faqHandlers = [
     const url = new URL(request.url);
     const tabType = url.searchParams.get('tab');
 
-    let data;
-    if (tabType === 'CONSULT') {
-      data = categoryList.map(
+    let matchedData;
+    if (tabType === 'SERVICE_CONSULT') {
+      matchedData = categoryList.filter(
         (categoryItem) => categoryItem.categoryType === 'SERVICE_CONSULT',
       );
-    } else if (tabType === 'USAGE') {
-      data = categoryList.map(
+    } else if (tabType === 'SERVICE_USAGE') {
+      matchedData = categoryList.filter(
         (categoryItem) => categoryItem.categoryType === 'SERVICE_USAGE',
       );
     }
 
-    return HttpResponse.json(data, {
+    return HttpResponse.json(matchedData, {
       status: 201,
       headers: {
         'Content-Type': 'application/json',
