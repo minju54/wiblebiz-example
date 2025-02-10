@@ -1,5 +1,6 @@
 'use client';
-import { useState, useEffect } from 'react';
+
+import { useEffect, useState } from 'react';
 
 // 스크롤 시 생기는 플로팅 버튼
 const ScrollToTopButton = () => {

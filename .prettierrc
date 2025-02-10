@@ -8,5 +8,20 @@
   "bracketSpacing": true,
   "arrowParens": "always",
   "endOfLine": "auto",
-  "plugins": ["prettier-plugin-tailwindcss"]
+  "importOrder": [
+    "^react",
+    "^@app/(.*)$",
+    "^@apis/(.*)$",
+    "^@hooks/(.*)$",
+    "^@components/(.*)$",
+    "^@styles/(.*)$",
+    "<THIRD_PARTY_MODULES>",
+    "^[./]"
+  ],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true,
+  "plugins": [
+    "prettier-plugin-tailwindcss",
+    "@trivago/prettier-plugin-sort-imports"
+  ]
 }

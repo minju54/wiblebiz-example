@@ -1,15 +1,17 @@
 import React from 'react';
-import AppStoreContainer from './_components/app-store-container';
+
+import ScrollToTopButton from '../_components/button/scroll-to-top-button';
+import AppStoreContainer from './_components/container/app-store-container';
+import FAQTabContainer from './_components/container/faq-tab-container';
+import ProcessInformationContainer from './_components/container/process-information-container';
+import ServiceInquiryContainer from './_components/container/service-inquiry-container';
+import { FAQContextProvider } from './_components/context/faq-context-provider';
 import FAQHeader from './_components/header/faq-header';
-import FAQTabContainer from './_components/faq-tab-container';
-import ProcessInformationContainer from './_components/process-information-container';
-import ServiceInquiryContainer from './_components/service-inquiry-container';
-import ScrollToTopButton from '../_components/scroll-to-top-button';
 
 // FAQ 페이지
-const FAQPage = () => {
+export default function FAQPage() {
   return (
-    <div>
+    <FAQContextProvider>
       {/* 헤더 */}
       <FAQHeader />
       {/* 탭 영역 */}
@@ -22,8 +24,6 @@ const FAQPage = () => {
       <AppStoreContainer />
       {/* 위로가기 floating 버튼 */}
       <ScrollToTopButton />
-    </div>
+    </FAQContextProvider>
   );
-};
-
-export default FAQPage;
+}

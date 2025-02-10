@@ -30,8 +30,9 @@ yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# env files 
+# 테스트를 위해 임시 주석 처리 
+# .env* 
 
 # vercel
 .vercel

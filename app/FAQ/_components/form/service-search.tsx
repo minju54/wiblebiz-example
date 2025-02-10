@@ -1,5 +1,7 @@
 'use client';
+
 import React, { useState } from 'react';
+
 import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
 
 // 서비스 검색 컴포넌트

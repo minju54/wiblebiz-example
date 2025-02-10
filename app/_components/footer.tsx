@@ -1,4 +1,5 @@
 import React from 'react';
+
 import LinkButton from '../FAQ/_components/button/link-button';
 
 const Footer = () => {

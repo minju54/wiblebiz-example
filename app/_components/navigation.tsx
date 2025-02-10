@@ -1,5 +1,7 @@
 'use client';
+
 import React, { useState } from 'react';
+
 import { NAV_ITEMS } from '../constant/menu';
 
 // 헤더 우측 햄버거 버튼 클릭 시 나오는 네비게이션 메뉴
