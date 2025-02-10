@@ -9,30 +9,19 @@
   "arrowParens": "always",
   "endOfLine": "auto",
   "importOrder": [
-    "^(react/(.*)$)|^(react$)",
-    "^(next/(.*)$)|^(next$)",
+    "^react",
+    "^@app/(.*)$",
+    "^@apis/(.*)$",
+    "^@hooks/(.*)$",
+    "^@components/(.*)$",
+    "^@styles/(.*)$",
     "<THIRD_PARTY_MODULES>",
-    "",
-    "^types$",
-    "^@/types/(.*)$",
-    "^@/config/(.*)$",
-    "^@/utils/(.*)$",
-    "^@/hooks/(.*)$",
-    "^@/components/ui/(.*)$",
-    "^@/components/(.*)$",
-    "^@/styles/(.*)$",
-    "^@/app/(.*)$",
-    "",
     "^[./]"
   ],
   "importOrderSeparation": false,
   "importOrderSortSpecifiers": true,
-  "importOrderBuiltinModulesToTop": true,
-  "importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
-  "importOrderMergeDuplicateImports": true,
-  "importOrderCombineTypeAndValueImports": true,
   "plugins": [
-    "@ianvs/prettier-plugin-sort-imports",
-    "prettier-plugin-tailwindcss"
+    "prettier-plugin-tailwindcss",
+    "@trivago/prettier-plugin-sort-imports"
   ]
 }
