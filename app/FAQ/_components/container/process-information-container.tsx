@@ -3,7 +3,7 @@ import React from 'react';
 import { PROCESS_INFORMATION } from '@/app/constant/faq';
 
 import TitleHeader from '../header/title-header';
-import ProcessItem from '../process_item';
+import ProcessItem from '../process-item';
 
 // 이용 프로세스 컨테이너 컴포넌트
 const ProcessInformationContainer = () => {

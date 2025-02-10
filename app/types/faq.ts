@@ -23,3 +23,25 @@ export interface IFaqContext {
   selectedCategory: ICategoryItem | null;
   setSelectedCategory: Dispatch<SetStateAction<ICategoryItem | null>>;
 }
+
+// 서비스 아이템 인터페이스
+export interface IServiceItem {
+  id: number;
+  categoryName: string;
+  categoryID: string;
+  subCategoryName?: string;
+  question: string;
+  answer: string;
+}
+
+export interface IFaqServiceList {
+  items: IServiceItem[];
+  hasMore: boolean;
+  nextOffset?: number;
+}
+
+// FAQ 서비스 목록 Response 타입
+export interface IFaqServiceResponse {
+  pageParams: number[];
+  pages: IFaqServiceList[];
+}
