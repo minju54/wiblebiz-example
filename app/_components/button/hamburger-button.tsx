@@ -1,7 +1,10 @@
 'use client';
+
 import React, { useState } from 'react';
-import { HamburgerMenuIcon, Cross1Icon } from '@radix-ui/react-icons';
-import Navigation from './navigation';
+
+import { Cross1Icon, HamburgerMenuIcon } from '@radix-ui/react-icons';
+
+import Navigation from '../navigation';
 
 // 헤더 우측에 위치한 햄버거 버튼
 const HamburgerButton = () => {

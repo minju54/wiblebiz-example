@@ -1,4 +1,5 @@
 'use client';
+
 import { useEffect, useState } from 'react';
 
 // MSW(Mock Service Worker)를 초기화하고, 초기화가 완료된 후에 자식 컴포넌트를 렌더링

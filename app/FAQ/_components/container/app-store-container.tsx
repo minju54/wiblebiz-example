@@ -1,5 +1,6 @@
 import React from 'react';
-import LinkButton from './button/link-button';
+
+import LinkButton from '../button/link-button';
 
 // 앱 스토어 안내 컴포넌트
 const AppStoreContainer = () => {

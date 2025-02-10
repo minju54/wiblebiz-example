@@ -1,4 +1,5 @@
 import { delay, http } from 'msw';
+
 import { faqHandlers } from './faq-handlers';
 
 export const handlers = [

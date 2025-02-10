@@ -1,11 +1,12 @@
 import React from 'react';
-import AppStoreContainer from './_components/app-store-container';
-import FAQHeader from './_components/header/faq-header';
-import FAQTabContainer from './_components/faq-tab-container';
-import ProcessInformationContainer from './_components/process-information-container';
-import ServiceInquiryContainer from './_components/service-inquiry-container';
-import ScrollToTopButton from '../_components/scroll-to-top-button';
+
+import ScrollToTopButton from '../_components/button/scroll-to-top-button';
+import AppStoreContainer from './_components/container/app-store-container';
+import FAQTabContainer from './_components/container/faq-tab-container';
+import ProcessInformationContainer from './_components/container/process-information-container';
+import ServiceInquiryContainer from './_components/container/service-inquiry-container';
 import { FAQContextProvider } from './_components/context/faq-context-provider';
+import FAQHeader from './_components/header/faq-header';
 
 // FAQ 페이지
 export default function FAQPage() {

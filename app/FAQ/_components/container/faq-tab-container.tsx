@@ -1,12 +1,14 @@
 'use client';
 
 import React from 'react';
-import * as Tabs from '@radix-ui/react-tabs';
+
 import { TAB_LIST } from '@/app/constant/seaerch';
-import { ServiceSearch } from './form/service-search';
-import SearchFilter from './search-filter';
-import FAQList from './faq-list';
-import { useFAQContext } from './context/faq-context-provider';
+import * as Tabs from '@radix-ui/react-tabs';
+
+import { useFAQContext } from '../context/faq-context-provider';
+import FAQList from '../faq-list';
+import { ServiceSearch } from '../form/service-search';
+import SearchFilter from '../search-filter';
 
 // FAQ 탭 컨테이너 컴포넌트
 const FAQTabContainer = () => {

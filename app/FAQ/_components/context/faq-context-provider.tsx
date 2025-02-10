@@ -1,5 +1,9 @@
+'use client';
+
+import React, { ReactNode, createContext, useContext, useState } from 'react';
+
+import { TAB_LIST } from '@/app/constant/seaerch';
 import { ICategoryItem, IFaqContext, ITab } from '@/app/types/faq';
-import React, { createContext, ReactNode, useContext, useState } from 'react';
 
 // FAQ 컨텍스트 기본 값
 const defaultFaqContextValue = {
@@ -15,7 +19,7 @@ export const FAQContext = createContext<IFaqContext>(defaultFaqContextValue);
 
 // FAQ 컨텍스트 프로바이드
 export const FAQContextProvider = ({ children }: { children: ReactNode }) => {
-  const [selectedTab, setSelectedTab] = useState<ITab | null>(null); // 선택한 탭
+  const [selectedTab, setSelectedTab] = useState<ITab | null>(TAB_LIST[0]); // 선택한 탭
   const [selectedCategory, setSelectedCategory] =
     useState<ICategoryItem | null>(null); // 선택한 카테고리
 

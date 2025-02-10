@@ -1,5 +1,7 @@
 'use client';
+
 import React, { useState } from 'react';
+
 import { NAV_ITEMS } from '../constant/menu';
 
 // 헤더 우측에 위치한 GNB 메뉴

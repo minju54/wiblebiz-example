@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import { FAQ_DATA_LIST } from '@/app/mocks/faq-data';
 import parse from 'html-react-parser';
 

@@ -1,7 +1,9 @@
 'use client';
+
 import React from 'react';
-import LinkButton from './button/link-button';
-import TitleHeader from './header/title-header';
+
+import LinkButton from '../button/link-button';
+import TitleHeader from '../header/title-header';
 
 // 서비스 문의 컴포넌트 컨테이너
 const ServiceInquiryContainer = () => {

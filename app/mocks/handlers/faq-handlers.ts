@@ -1,5 +1,5 @@
-import { http, HttpResponse } from 'msw';
 import { categoryList } from '@/app/constant/seaerch';
+import { HttpResponse, http } from 'msw';
 
 export const faqHandlers = [
   // 서비스 카테고리 목록 조회 - GET
