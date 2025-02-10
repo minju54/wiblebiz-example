@@ -1,9 +1,4 @@
-import { ICategoryItem, ITab } from '../types/faq';
-
-export const TAB_LIST: ITab[] = [
-  { id: 'SERVICE_CONSULT', name: '서비스 도입' },
-  { id: 'SERVICE_USAGE', name: '서비스 이용' },
-] as const;
+import { ICategoryItem } from '@/app/types/faq';
 
 export const categoryList: ICategoryItem[] = [
   {

@@ -2,7 +2,7 @@
 
 import React, { ReactNode, createContext, useContext, useState } from 'react';
 
-import { TAB_LIST } from '@/app/constant/seaerch';
+import { TAB_LIST } from '@/app/constant/faq';
 import { ICategoryItem, IFaqContext, ITab } from '@/app/types/faq';
 
 // 컨텍스트 생성

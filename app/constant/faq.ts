@@ -1,3 +1,5 @@
+import { ITab } from '../types/faq';
+
 export const PROCESS_INFORMATION = [
   {
     title: '문의 등록',
@@ -15,4 +17,9 @@ export const PROCESS_INFORMATION = [
     title: '서비스 이용',
     content: '사용자 App에서 차량 예약을 하고 위블존에서 바로 이용하세요!',
   },
-];
+] as const;
+
+export const TAB_LIST: ITab[] = [
+  { id: 'SERVICE_CONSULT', name: '서비스 도입' },
+  { id: 'SERVICE_USAGE', name: '서비스 이용' },
+] as const;

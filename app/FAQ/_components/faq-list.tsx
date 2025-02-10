@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import { FAQ_DATA_LIST } from '@/app/mocks/faq-data';
 import parse from 'html-react-parser';
+import Image from 'next/image';
 
 // FAQ 리스트 컴포넌트
 const FAQList = () => {
@@ -40,9 +41,13 @@ const FAQList = () => {
                 <strong className="flex min-w-full text-left sm:p-0 md:flex-1 md:pl-[var(--faq-list-a-padding-h)]">
                   {faqItem.question}
                 </strong>
-                <img
+                <Image
                   src="/icons/ic_arrow.svg"
-                  className={`absolute right-2 h-[var(--ic-md)] text-gray-500 transition-transform duration-700 ${expandedIndex === index ? 'rotate-180' : 'rotate-0'}`}
+                  alt="arrow_icon"
+                  width={32}
+                  height={32}
+                  className={`absolute right-2 h-[var(--ic-md)] text-gray-500 transition-transform duration-700 
+                    ${expandedIndex === index ? 'rotate-180' : 'rotate-0'}`}
                 />
               </button>
             </h4>

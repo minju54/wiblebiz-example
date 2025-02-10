@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import { TAB_LIST } from '@/app/constant/seaerch';
+import { TAB_LIST } from '@/app/constant/faq';
 import * as Tabs from '@radix-ui/react-tabs';
 
 import { useFAQContext } from '../context/faq-context-provider';
