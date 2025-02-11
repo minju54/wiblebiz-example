@@ -22,7 +22,7 @@ const ProcessInformationContainer = () => {
             {index != PROCESS_INFORMATION.length - 1 && (
               <Image
                 src="/icons/ic_step_arrow.svg"
-                className="hidden md:block"
+                className="hidden md:block w-6 h-6"
                 alt="ic_arrow_icon"
                 width={24}
                 height={24}

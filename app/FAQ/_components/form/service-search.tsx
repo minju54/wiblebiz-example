@@ -1,64 +1,84 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
+import { useForm } from 'react-hook-form';
 
-import { MagnifyingGlassIcon } from '@radix-ui/react-icons';
+import SearchInfo from './search-info';
 
-// 서비스 검색 컴포넌트
+interface IServiceSearch {
+  question: string | null;
+}
+
+/**
+ * 검색 조건 컴포넌트
+ */
 export const ServiceSearch = () => {
-  const [searchTerm, setSearchTerm] = useState<string>('');
+  // 검색 조건 기본 값
+  const searchDefaultValues = { question: null };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value);
+  // form 관련 상태
+  const {
+    register,
+    handleSubmit,
+    watch,
+    setValue,
+    reset,
+    formState: { isSubmitted, errors },
+  } = useForm<IServiceSearch>({
+    mode: 'onChange',
+    defaultValues: searchDefaultValues,
+  });
+
+  // 검색어
+  const searchTerm = watch('question')?.trim();
+
+  // 검색 초기화 버튼 클릭
+  const onReset = () => {
+    reset(searchDefaultValues);
   };
 
-  const clearInput = () => {
-    setSearchTerm('');
+  // 검색어 모두 지움 버튼 클릭
+  const onClear = () => {
+    setValue('question', null);
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (searchTerm.trim()) {
-      console.log('Searching for:', searchTerm);
-      // 검색 로직 추가 (예: API 호출)
-    }
+  // 검색 버튼 클릭
+  const onSubmit = () => {
+    console.log('isSubmitted', isSubmitted, ', errors:', errors.question);
   };
 
   return (
-    <form
-      onSubmit={handleSubmit}
-      className="mb-5 flex justify-center bg-gray-10 p-4"
-    >
-      <div className="flex w-[var(--search-bar-width)] border border-midnight-900 bg-white px-[var(--px-md)]">
-        <input
-          className="h-[var(--btn-xlg2)] w-full outline-0"
-          placeholder="찾으시는 내용을 입력해주세요."
-          value={searchTerm}
-          onChange={handleChange}
-        />
-        <div className="ml-auto flex items-center space-x-3">
-          {searchTerm && (
+    <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
+      <div className="mb-5 flex justify-center bg-gray-10 p-4">
+        <div className="flex w-[var(--search-bar-width)] border border-midnight-900 bg-white px-[var(--px-md)]">
+          <input
+            {...register('question', { required: true })}
+            className="h-[var(--btn-xlg2)] w-full outline-0"
+            placeholder="찾으시는 내용을 입력해주세요."
+          />
+          <div className="ml-auto flex items-center space-x-3">
+            {searchTerm && searchTerm.length > 0 && (
+              <button
+                type="button"
+                onClick={onClear}
+                className="h-[var(--ic-md)] w-[var(--ic-md)] bg-contain bg-center bg-no-repeat"
+                style={{
+                  backgroundImage: "url('/icons/ic_clear.svg')",
+                }}
+              />
+            )}
             <button
-              type="button"
+              type="submit"
+              onClick={onSubmit}
               className="h-[var(--ic-md)] w-[var(--ic-md)] bg-contain bg-center bg-no-repeat"
               style={{
-                backgroundImage:
-                  "url('https://wiblebiz.kia.com/static/media/ic_clear.e7e65ee27d7e1eee6ae8.svg')",
-              }}
-              onClick={clearInput}
-            />
-          )}
-          <button type="submit">
-            <MagnifyingGlassIcon
-              style={{
-                width: 'var(--ic-md)',
-                height: 'var(--ic-md)',
-                background: '',
+                backgroundImage: "url('/icons/ic_search.svg')",
               }}
             />
-          </button>
+          </div>
         </div>
       </div>
+      {isSubmitted && !errors.question && <SearchInfo onReset={onReset} />}
     </form>
   );
 };
