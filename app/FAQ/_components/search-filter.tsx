@@ -43,8 +43,8 @@ const SearchFilter = () => {
           type="radio"
           name="filter"
           className="peer sr-only absolute -left-full"
-          defaultChecked
           checked={selectedCategory === null}
+          onChange={() => {}}
         />
         <span className={spanClassName}>전체</span>
       </label>

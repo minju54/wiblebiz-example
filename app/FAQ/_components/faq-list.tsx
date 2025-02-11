@@ -5,6 +5,7 @@ import { IFaqServiceResponse } from '@/app/types/faq';
 
 import { useFAQContext } from './context/faq-context-provider';
 import FaqListItem from './faq-list-item';
+import NoSearchResult from './no-search-result';
 
 /**
  * FAQ 리스트 컴포넌트
@@ -36,24 +37,35 @@ const FAQList = () => {
     </button>
   );
 
+  // 검색 데이터 총 수 변경
+  const changeResultCount = () => {
+    setSearchResultCount(data?.pages[0].totalCount ?? 0);
+  };
+
   // 탭, 카테고리 변경 시 쿼리 재조회
   useEffect(() => {
     refetch();
   }, [selectedTab, selectedCategory, searchQuestion]);
 
   useEffect(() => {
-    setSearchResultCount(data?.pages[0].totalCount ?? 0);
+    changeResultCount();
   }, [data]);
 
-  // TODO 검색 결과 없을때 처리
   return (
     <div>
       <ul className="border-t-2 border-midnight-900">
         {data?.pages.map((page, index) => (
           <div key={index}>
-            {page.items.map((faqItem, index) => (
+            {/* {page.items.map((faqItem, index) => (
               <FaqListItem key={index} index={index} faqItem={faqItem} />
-            ))}
+            ))} */}
+            {page.items.length > 0 ? (
+              page.items.map((faqItem, index) => (
+                <FaqListItem key={index} index={index} faqItem={faqItem} />
+              ))
+            ) : (
+              <NoSearchResult />
+            )}
           </div>
         ))}
       </ul>
