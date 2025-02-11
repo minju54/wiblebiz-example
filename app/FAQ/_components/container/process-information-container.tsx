@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { PROCESS_INFORMATION } from '@/app/constant/faq';
+import Image from 'next/image';
 
 import TitleHeader from '../header/title-header';
 import ProcessItem from '../process-item';
@@ -19,7 +20,13 @@ const ProcessInformationContainer = () => {
               contentText={processItem.content}
             />
             {index != PROCESS_INFORMATION.length - 1 && (
-              <img src="/icons/ic_step_arrow.svg" className="hidden md:block" />
+              <Image
+                src="/icons/ic_step_arrow.svg"
+                className="hidden md:block"
+                alt="ic_arrow_icon"
+                width={24}
+                height={24}
+              />
             )}
           </div>
         ))}

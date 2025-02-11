@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 
+import Image from 'next/image';
+
 // 스크롤 시 생기는 플로팅 버튼
 const ScrollToTopButton = () => {
   const [showButton, setShowButton] = useState<boolean>(false);
@@ -30,7 +32,7 @@ const ScrollToTopButton = () => {
         showButton ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
       }`}
     >
-      <img src="/icons/ic_top.svg" className="w-6" />
+      <Image src="/icons/ic_top.svg" alt="ic_top_icon" width={24} height={24} />
     </button>
   );
 };

@@ -12,7 +12,6 @@ import { useFAQContext } from './context/faq-context-provider';
  */
 const FAQList = () => {
   const { selectedTab, selectedCategory } = useFAQContext();
-  console.log('selectedCategory', selectedCategory);
 
   // 현재 펼친 인덱스
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);

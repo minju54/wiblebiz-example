@@ -1,3 +1,4 @@
+import { IServiceItem } from '@/app/types/faq';
 import { HttpResponse, http } from 'msw';
 
 import { categoryList } from '../data/category-filter-data';
@@ -46,7 +47,7 @@ export const faqHandlers = [
     const limit = parseInt(url.searchParams.get('limit') ?? '10', 10) || 10;
     const offset = parseInt(url.searchParams.get('offset') ?? '0', 10) || 0;
 
-    let dataList: any[] = [];
+    let dataList: IServiceItem[] = [];
 
     if (tabId === 'SERVICE_CONSULT') {
       dataList = faqCategoryID
