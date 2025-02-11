@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import '../public/fonts/styles.css';
+import Dialog from './_components/dialog/dialog';
 import Footer from './_components/footer';
 import Header from './_components/header';
 import MSWWrapper from './_components/msw-wrapper';
@@ -28,7 +29,10 @@ export default function RootLayout({
           <Header />
           <main className="mb-[80px] flex-1 overflow-auto px-[var(--side-padding)]">
             {/* Mock API 적용을 위한 Wrapper */}
-            <MSWWrapper>{children}</MSWWrapper>
+            <MSWWrapper>
+              <Dialog />
+              {children}
+            </MSWWrapper>
           </main>
           {/* 전역 푸터 컴포넌트 */}
           <Footer />
