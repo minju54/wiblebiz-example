@@ -15,14 +15,17 @@ import SearchFilter from '../search-filter';
  * FAQ 탭 컨테이너 컴포넌트
  */
 const FAQTabContainer = () => {
-  const { setSelectedTab, setSelectedCategory } = useFAQContext();
+  const { setSelectedTab, setSelectedCategory, setSearchQuestion } =
+    useFAQContext();
 
   // 탭 선택 이벤트 핸들러
   const handleClickTab = (tabItem: ITab) => {
     setSelectedTab(tabItem);
     setSelectedCategory(null);
+    setSearchQuestion(null);
   };
 
+  // TODO 데이터 가져오기 전에 영역 크기 Suspend
   return (
     <Tabs.Root defaultValue={TAB_LIST[0].id}>
       <Tabs.List className="mb-[var(--px-lg)] flex" aria-label="service-tab">

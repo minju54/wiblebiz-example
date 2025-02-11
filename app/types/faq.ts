@@ -22,6 +22,10 @@ export interface IFaqContext {
   setSelectedTab: Dispatch<SetStateAction<ITab>>;
   selectedCategory: ICategoryItem | null;
   setSelectedCategory: Dispatch<SetStateAction<ICategoryItem | null>>;
+  searchQuestion: string | null;
+  setSearchQuestion: Dispatch<SetStateAction<string | null>>;
+  searchResultCount: number;
+  setSearchResultCount: Dispatch<SetStateAction<number>>;
 }
 
 // 서비스 아이템 인터페이스
@@ -38,6 +42,7 @@ export interface IFaqServiceList {
   items: IServiceItem[];
   hasMore: boolean;
   nextOffset?: number;
+  totalCount: number;
 }
 
 // FAQ 서비스 목록 Response 타입

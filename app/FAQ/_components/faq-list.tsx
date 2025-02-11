@@ -10,19 +10,19 @@ import FaqListItem from './faq-list-item';
  * FAQ 리스트 컴포넌트
  */
 const FAQList = () => {
-  const { selectedTab, selectedCategory } = useFAQContext();
+  const {
+    selectedTab,
+    selectedCategory,
+    searchQuestion,
+    setSearchResultCount,
+  } = useFAQContext();
 
   // 리스트 조회 쿼리
   const { data, fetchNextPage, hasNextPage, isFetchingNextPage, refetch } =
     useGetInfiniteQuery<IFaqServiceResponse>({
       queryKey: ['faqList'],
-      endpoint: `/api/faq?tab=${selectedTab.id}&faqCategoryID=${selectedCategory ? selectedCategory.categoryID : ''}`,
+      endpoint: `/api/faq?tab=${selectedTab.id}&faqCategoryID=${selectedCategory ? selectedCategory.categoryID : ''}&question=${searchQuestion ?? ''}`,
     });
-
-  // 탭, 카테고리 변경 시 쿼리 재조회
-  useEffect(() => {
-    refetch();
-  }, [selectedTab, selectedCategory]);
 
   // 더보기 버튼
   const MoreButton = () => (
@@ -36,6 +36,16 @@ const FAQList = () => {
     </button>
   );
 
+  // 탭, 카테고리 변경 시 쿼리 재조회
+  useEffect(() => {
+    refetch();
+  }, [selectedTab, selectedCategory, searchQuestion]);
+
+  useEffect(() => {
+    setSearchResultCount(data?.pages[0].totalCount ?? 0);
+  }, [data]);
+
+  // TODO 검색 결과 없을때 처리
   return (
     <div>
       <ul className="border-t-2 border-midnight-900">

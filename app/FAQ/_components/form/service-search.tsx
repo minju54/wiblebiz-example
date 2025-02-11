@@ -3,6 +3,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
+import { useFAQContext } from '../context/faq-context-provider';
 import SearchInfo from './search-info';
 
 interface IServiceSearch {
@@ -13,6 +14,8 @@ interface IServiceSearch {
  * 검색 조건 컴포넌트
  */
 export const ServiceSearch = () => {
+  const { setSearchQuestion } = useFAQContext();
+
   // 검색 조건 기본 값
   const searchDefaultValues = { question: null };
 
@@ -40,13 +43,16 @@ export const ServiceSearch = () => {
   // 검색어 모두 지움 버튼 클릭
   const onClear = () => {
     setValue('question', null);
+    setSearchQuestion(null);
   };
 
   // 검색 버튼 클릭
   const onSubmit = () => {
     console.log('isSubmitted', isSubmitted, ', errors:', errors.question);
+    setSearchQuestion(searchTerm ?? null);
   };
 
+  // TODO 검색어는 두 글자 입력해주세요
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
       <div className="mb-5 flex justify-center bg-gray-10 p-4">
