@@ -1,7 +1,9 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+
+import Dialog from '@/app/_components/dialog/dialog';
 
 import IconButton from '../button/icon-button';
 import { useFAQContext } from '../context/faq-context-provider';
@@ -16,6 +18,9 @@ interface IServiceSearch {
  */
 export const ServiceSearch = () => {
   const { setSearchQuestion, setSelectedCategory } = useFAQContext();
+
+  // TODO zustand 로 전역 상태 관리 하기, layout.tsx 페이지에 위치하게
+  const [showDialog, setShowDoalog] = useState<boolean>(false);
 
   // 검색 조건 기본 값
   const searchDefaultValues = { question: null };
@@ -51,7 +56,10 @@ export const ServiceSearch = () => {
 
   // 검색 버튼 클릭
   const onSubmit = () => {
-    console.log('isSubmitted', isSubmitted, ', errors:', errors.question);
+    if (searchTerm?.length === 1) {
+      setShowDoalog(true);
+      return;
+    }
     setSearchQuestion(searchTerm ?? null);
   };
 
@@ -82,6 +90,7 @@ export const ServiceSearch = () => {
         </div>
       </div>
       {isSubmitted && !errors.question && <SearchInfo onReset={onReset} />}
+      {showDialog && <Dialog isOpen={showDialog} setIsOpen={setShowDoalog} />}
     </form>
   );
 };

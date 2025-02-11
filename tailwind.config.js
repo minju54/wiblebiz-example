@@ -24,6 +24,7 @@ module.exports = {
       screens: {
         sm: '744px', // 744px 이상
         md: '1024px', // 1024px 이상
+        md2: '1060px', // 1060px 이상
         lg: '1440px', // 1440px 이상
       },
     },
