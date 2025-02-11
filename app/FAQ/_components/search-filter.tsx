@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { useGetQuery } from '@/app/hooks/use-get-query';
 import { ICategoryItem } from '@/app/types/faq';
 
 import { useFAQContext } from './context/faq-context-provider';
 
-// 카테고리 검색 필터 컴포넌트
+/**
+ * 카테고리 검색 필터 컴포넌트
+ */
 const SearchFilter = () => {
-  const { selectedTab, setSelectedCategory } = useFAQContext();
+  const { selectedTab, selectedCategory, setSelectedCategory } =
+    useFAQContext();
 
   // 카테고리 필터 조회 쿼리
   const { data } = useGetQuery<ICategoryItem[]>({
@@ -26,6 +29,10 @@ const SearchFilter = () => {
     setSelectedCategory(selectedCategory);
   };
 
+  useEffect(() => {
+    console.log('selectedCategory', selectedCategory);
+  }, [selectedCategory]);
+
   return (
     <div className="mb-[var(--px-md)] flex flex-wrap">
       <label
@@ -37,6 +44,7 @@ const SearchFilter = () => {
           name="filter"
           className="peer sr-only absolute -left-full"
           defaultChecked
+          checked={selectedCategory === null}
         />
         <span className={spanClassName}>전체</span>
       </label>

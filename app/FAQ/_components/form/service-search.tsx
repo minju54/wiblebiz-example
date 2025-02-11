@@ -3,6 +3,7 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
+import IconButton from '../button/icon-button';
 import { useFAQContext } from '../context/faq-context-provider';
 import SearchInfo from './search-info';
 
@@ -14,7 +15,7 @@ interface IServiceSearch {
  * 검색 조건 컴포넌트
  */
 export const ServiceSearch = () => {
-  const { setSearchQuestion } = useFAQContext();
+  const { setSearchQuestion, setSelectedCategory } = useFAQContext();
 
   // 검색 조건 기본 값
   const searchDefaultValues = { question: null };
@@ -38,12 +39,14 @@ export const ServiceSearch = () => {
   // 검색 초기화 버튼 클릭
   const onReset = () => {
     reset(searchDefaultValues);
+    setSearchQuestion(null); // 검색어 초기화
+    setSelectedCategory(null); // 카테고리 초기화
   };
 
   // 검색어 모두 지움 버튼 클릭
   const onClear = () => {
     setValue('question', null);
-    setSearchQuestion(null);
+    setSearchQuestion(null); // 검색어 초기화
   };
 
   // 검색 버튼 클릭
@@ -64,22 +67,16 @@ export const ServiceSearch = () => {
           />
           <div className="ml-auto flex items-center space-x-3">
             {searchTerm && searchTerm.length > 0 && (
-              <button
-                type="button"
+              <IconButton
+                buttonType="button"
                 onClick={onClear}
-                className="h-[var(--ic-md)] w-[var(--ic-md)] bg-contain bg-center bg-no-repeat"
-                style={{
-                  backgroundImage: "url('/icons/ic_clear.svg')",
-                }}
+                iconPath="/icons/ic_clear.svg"
               />
             )}
-            <button
-              type="submit"
+            <IconButton
+              buttonType="submit"
               onClick={onSubmit}
-              className="h-[var(--ic-md)] w-[var(--ic-md)] bg-contain bg-center bg-no-repeat"
-              style={{
-                backgroundImage: "url('/icons/ic_search.svg')",
-              }}
+              iconPath="/icons/ic_search.svg"
             />
           </div>
         </div>
