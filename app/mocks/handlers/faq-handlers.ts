@@ -1,3 +1,4 @@
+import { IServiceItem } from '@/app/types/faq';
 import { HttpResponse, http } from 'msw';
 
 import { categoryList } from '../data/category-filter-data';
@@ -38,15 +39,17 @@ export const faqHandlers = [
    */
   http.get('/api/faq', ({ request }) => {
     const url = new URL(request.url);
-    // 선택된 탭, 카테고리 파라미터
+
+    // 선택된 탭, 카테고리, 검색조건 파라미터
     const tabId = url.searchParams.get('tab');
     const faqCategoryID = url.searchParams.get('faqCategoryID');
+    const question = url.searchParams.get('question');
 
     // 페이지네이션을 위한 파라미터
     const limit = parseInt(url.searchParams.get('limit') ?? '10', 10) || 10;
     const offset = parseInt(url.searchParams.get('offset') ?? '0', 10) || 0;
 
-    let dataList: any[] = [];
+    let dataList: IServiceItem[] = [];
 
     if (tabId === 'SERVICE_CONSULT') {
       dataList = faqCategoryID
@@ -54,13 +57,27 @@ export const faqHandlers = [
             (consultItem) => consultItem.categoryID === faqCategoryID,
           )
         : serviceConsultList;
-    }
-    if (tabId === 'SERVICE_USAGE') {
+    } else if (tabId === 'SERVICE_USAGE') {
       dataList = faqCategoryID
         ? serviceUsageListData.filter(
             (consultItem) => consultItem.categoryID === faqCategoryID,
           )
         : serviceUsageListData;
+    } else {
+      console.error('해당하는 tabId 없음!', tabId);
+    }
+
+    if (question) {
+      const lowerCaseQuestion = question.toLowerCase();
+      dataList = dataList.filter(
+        (item) =>
+          (tabId === 'SERVICE_USAGE' &&
+            item.categoryName.includes(lowerCaseQuestion)) ||
+          (item.subCategoryName &&
+            item.subCategoryName.includes(lowerCaseQuestion)) ||
+          item.question.toLowerCase().includes(lowerCaseQuestion) ||
+          item.answer.toLowerCase().includes(lowerCaseQuestion),
+      );
     }
 
     // 페이지네이션 적용
@@ -73,6 +90,7 @@ export const faqHandlers = [
         items: paginatedItems,
         hasMore,
         nextOffset: hasMore ? nextOffset : null, // 다음 요청을 위한 offset
+        totalCount: dataList.length,
       },
       {
         status: 201,

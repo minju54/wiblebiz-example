@@ -9,6 +9,9 @@ import TitleHeader from '../header/title-header';
 const ServiceInquiryContainer = () => {
   const KAKAO_INQUIRY_URL = 'https://pf.kakao.com/_xfLxjdb';
 
+  const linkButtonClassName = `flex min-h-[var(--btn-xxlg)] items-center border border-midnight-900 
+  pl-[20px] sm:flex-1 sm:justify-center sm:pl-0 hover:bg-gray-10`;
+
   const handleDownload = () => {
     const fileUrl = '/file/위블비즈 상품제안서.pdf';
     const link = document.createElement('a');
@@ -25,7 +28,7 @@ const ServiceInquiryContainer = () => {
           icon="/icons/ic_download.svg"
           alt="Download Icon"
           onClick={handleDownload}
-          className="flex min-h-[var(--btn-xxlg)] items-center border border-midnight-900 pl-[20px] sm:flex-1 sm:justify-center sm:pl-0"
+          className={linkButtonClassName}
           iconClassName="mr-2 w-[var(--ic-lg)]"
         >
           <span className="font-bold">상품 제안서 다운로드</span>
@@ -33,7 +36,7 @@ const ServiceInquiryContainer = () => {
         <LinkButton
           icon="/icons/ic_write.svg"
           alt="Write Icon"
-          className="flex min-h-[var(--btn-xxlg)] items-center border border-midnight-900 pl-[20px] sm:flex-1 sm:justify-center sm:pl-0"
+          className={linkButtonClassName}
           iconClassName="mr-2 w-[var(--ic-lg)]"
         >
           <span className="font-bold">상담 문의 등록하기</span>
@@ -44,7 +47,7 @@ const ServiceInquiryContainer = () => {
           href={KAKAO_INQUIRY_URL}
           target="_blank"
           rel="noreferrer"
-          className="flex min-h-[var(--btn-xxlg)] flex-1 items-center border border-midnight-900 pl-[20px] sm:min-w-[calc(100%-var(--space-md))] sm:justify-center sm:pl-0 md:min-w-[20px]"
+          className={`${linkButtonClassName} flex-1 sm:min-w-[calc(100%-var(--space-md))] md:min-w-[20px]`}
           iconClassName="mr-2 w-[var(--ic-lg)]"
         >
           <div className="flex flex-col">

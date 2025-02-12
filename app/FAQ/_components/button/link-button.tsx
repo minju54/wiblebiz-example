@@ -1,5 +1,7 @@
 import React, { ReactNode } from 'react';
 
+import Image from 'next/image';
+
 type LinkButtonProps = {
   icon?: string;
   alt: string;
@@ -33,7 +35,15 @@ const LinkButton = ({
       rel={rel}
       {...rest}
     >
-      {icon && <img src={icon} alt={alt} className={iconClassName} />}
+      {icon && (
+        <Image
+          src={icon}
+          alt={alt}
+          className={iconClassName}
+          width={24}
+          height={24}
+        />
+      )}
       {children}
     </a>
   );

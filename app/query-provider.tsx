@@ -17,7 +17,7 @@ const QueryProvider = ({ children }: IProviders) => {
   return (
     <QueryClientProvider client={queryClient}>
       {/* React Query 개발 도구 */}
-      <ReactQueryDevtools initialIsOpen={false} />
+      <ReactQueryDevtools initialIsOpen={false} buttonPosition="top-right" />
       {children}
     </QueryClientProvider>
   );

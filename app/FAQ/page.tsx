@@ -8,7 +8,10 @@ import ServiceInquiryContainer from './_components/container/service-inquiry-con
 import { FAQContextProvider } from './_components/context/faq-context-provider';
 import FAQHeader from './_components/header/faq-header';
 
-// FAQ 페이지
+// TODO 시멘틱 태그 빠트린거 없는지 확인
+/**
+ * FAQ 페이지
+ */
 export default function FAQPage() {
   return (
     <FAQContextProvider>

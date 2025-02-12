@@ -40,7 +40,7 @@ export const useGetInfiniteQuery = <TData = unknown>({
   gcTime,
   staleTime,
   ...rest
-}: IUseGetInfiniteQuery<TData>): UseInfiniteQueryResult<TData> => {
+}: IUseGetInfiniteQuery): UseInfiniteQueryResult<TData> => {
   return useInfiniteQuery({
     queryKey,
     queryFn: ({ pageParam = 0 }) =>

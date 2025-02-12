@@ -18,7 +18,7 @@ export interface IFetchInfineteData {
 }
 
 // 커스텀 훅 useGetInfiniteQuery 인터페이스
-export interface IUseGetInfiniteQuery<TData> {
+export interface IUseGetInfiniteQuery {
   queryKey: string[];
   endpoint: string;
   gcTime?: number;
