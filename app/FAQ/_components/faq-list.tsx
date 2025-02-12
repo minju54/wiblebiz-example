@@ -53,12 +53,9 @@ const FAQList = () => {
 
   return (
     <div>
-      <ul className="border-t-2 border-midnight-900">
+      <div className="border-t-2 border-midnight-900">
         {data?.pages.map((page, index) => (
-          <div key={index}>
-            {/* {page.items.map((faqItem, index) => (
-              <FaqListItem key={index} index={index} faqItem={faqItem} />
-            ))} */}
+          <ul key={index}>
             {page.items.length > 0 ? (
               page.items.map((faqItem, index) => (
                 <FaqListItem key={index} index={index} faqItem={faqItem} />
@@ -66,9 +63,9 @@ const FAQList = () => {
             ) : (
               <NoSearchResult />
             )}
-          </div>
+          </ul>
         ))}
-      </ul>
+      </div>
       {hasNextPage && <MoreButton />}
     </div>
   );

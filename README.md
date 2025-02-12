@@ -1,6 +1,4 @@
-<div align="center">
-  <h1>wible biz - FAQ</h1>
-</div>
+# wible biz - FAQ
 
 [![stackticon](https://firebasestorage.googleapis.com/v0/b/stackticon-81399.appspot.com/o/images%2F1739347171733?alt=media&token=bfafacf9-0469-48f5-aa94-8595a339ff71)](https://github.com/msdio/stackticon)
 
@@ -55,8 +53,8 @@ npm i
 ### 개발서버 실행
 
 - 개발 서버 실행 시 아래 명령어를 입력합니다.
-- 개발 서버가 실행되면 브라우저에서 `http://localhost:3000`으로 접속할 수 있습니다.
-- FAQ 페이지 경로는 `http://localhost:3000/FAQ` 입니다.
+- 개발 서버가 실행되면 브라우저에서 `http://localhost:3001`으로 접속할 수 있습니다.
+- FAQ 페이지 경로는 `http://localhost:3001/FAQ` 입니다.
 
 ```bash
 npm run dev

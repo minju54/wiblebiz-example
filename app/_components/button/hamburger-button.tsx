@@ -31,7 +31,12 @@ const HamburgerButton = () => {
   return (
     <div>
       {/* 모바일 햄버거 버튼 */}
-      <button className="md:hidden text-gray-800" onClick={handleToggleButton}>
+      <button
+        type="button"
+        className="md:hidden text-gray-800"
+        onClick={handleToggleButton}
+        aria-label="햄버거 버튼"
+      >
         {isVisibleNav ? (
           <Cross1Icon width={20} height={20} />
         ) : (

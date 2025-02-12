@@ -33,6 +33,7 @@ const ServiceInquiryContainer = () => {
           onClick={handleDownload}
           className={linkButtonClassName}
           iconClassName="mr-2 w-[var(--ic-lg)]"
+          target="_self"
         >
           <span className="font-bold">상품 제안서 다운로드</span>
         </LinkButton>

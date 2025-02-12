@@ -27,7 +27,7 @@ export default function RootLayout({
         <QueryProvider>
           {/* 전역 헤더 컴포넌트 */}
           <Header />
-          <main className="mb-[80px] flex-1 overflow-auto px-[var(--side-padding)]">
+          <main className="mb-[80px] flex-1 overflow-auto px-[var(--side-padding)] h-full">
             {/* Mock API 적용을 위한 Wrapper */}
             <MSWWrapper>
               <Dialog />

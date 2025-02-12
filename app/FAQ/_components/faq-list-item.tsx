@@ -35,7 +35,9 @@ const FaqListItem = ({ index, faqItem }: FaqListItemProps) => {
         </p>
       )}
       <p className="flex w-auto justify-center text-xs text-gray-500 sm:text-sm md:w-[150px] md:flex-none md:px-[var(--faq-list-a-padding-h)] md:text-base">
-        <span className="px-1 md:hidden">&gt;</span>
+        {selectedTab.id !== 'SERVICE_CONSULT' && (
+          <span className="px-1">&gt;</span>
+        )}
         {faqItem.subCategoryName}
       </p>
       <strong className="flex min-w-full text-left sm:p-0 md:flex-1 md:pl-[var(--faq-list-a-padding-h)]">
@@ -47,7 +49,7 @@ const FaqListItem = ({ index, faqItem }: FaqListItemProps) => {
   // FAQ 내용 컴포넌트
   const Content = () => (
     <div
-      className={`overflow-hidden transition-all duration-1000 ease-in-out ${
+      className={`overflow-hidden transition-all duration-700 ease-in-out ${
         expandedIndex === index ? 'max-h-[1000px]' : 'max-h-0'
       }`}
     >
@@ -59,7 +61,7 @@ const FaqListItem = ({ index, faqItem }: FaqListItemProps) => {
 
   return (
     <li className="border-b border-gray-100">
-      <h4 className={`${expandedIndex === index ? 'bg-gray-10' : ''}`}>
+      <h2 className={`${expandedIndex === index ? 'bg-gray-10' : ''}`}>
         <button
           type="button"
           className={`pr-[calc(var(--px-xlg) + 1.6em)] relative flex w-full flex-wrap items-center overflow-hidden 
@@ -77,7 +79,7 @@ const FaqListItem = ({ index, faqItem }: FaqListItemProps) => {
               ${expandedIndex === index ? 'rotate-180' : 'rotate-0'}`}
           />
         </button>
-      </h4>
+      </h2>
       <Content />
     </li>
   );
