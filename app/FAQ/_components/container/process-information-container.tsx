@@ -6,10 +6,12 @@ import Image from 'next/image';
 import TitleHeader from '../header/title-header';
 import ProcessItem from '../process-item';
 
-// 이용 프로세스 컨테이너 컴포넌트
+/**
+ * 이용 프로세스 컨테이너 컴포넌트
+ */
 const ProcessInformationContainer = () => {
   return (
-    <div>
+    <section>
       <TitleHeader title="이용 프로세스 안내" />
       <div className="flex flex-col md:flex-row md:flex-nowrap md:items-center">
         {PROCESS_INFORMATION.map((processItem, index) => (
@@ -31,7 +33,7 @@ const ProcessInformationContainer = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 

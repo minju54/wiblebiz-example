@@ -12,7 +12,10 @@ interface IProviders {
   children: ReactNode;
 }
 
-// React Query Provider 컴포넌트
+//
+/**
+ * React Query Provider 컴포넌트
+ */
 const QueryProvider = ({ children }: IProviders) => {
   return (
     <QueryClientProvider client={queryClient}>

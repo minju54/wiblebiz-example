@@ -16,14 +16,14 @@ const Navigation = ({ isVisibleNav, isOpenAnimating }: NavigationProps) => {
   const [activeIndex, setActiveIndex] = useState<number>(1); // 두 번째 메뉴 활성화
 
   return (
-    <>
+    <nav>
       {isVisibleNav && (
-        <div
+        <ul
           className={`fixed inset-0 top-[var(--header-height)] w-full h-[calc(100vh-4rem)] 
             shadow-lg flex flex-col items-center gap-6 md:hidden pt-8 bg-white 
             ${isOpenAnimating ? 'animate-expandFromLeft' : 'animate-shrinkToLeft'}`}
         >
-          <div className="flex flex-col pt-[80px] items-center space-y-8">
+          <li className="flex flex-col pt-[80px] items-center space-y-8">
             {NAV_ITEMS.map((item, index) => (
               <a
                 key={index}
@@ -34,10 +34,10 @@ const Navigation = ({ isVisibleNav, isOpenAnimating }: NavigationProps) => {
                 <b>{item}</b>
               </a>
             ))}
-          </div>
-        </div>
+          </li>
+        </ul>
       )}
-    </>
+    </nav>
   );
 };
 

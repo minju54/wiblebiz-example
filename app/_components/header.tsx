@@ -1,26 +1,18 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 
+import useScroll from '../hooks/use-scroll';
 import HamburgerButton from './button/hamburger-button';
 import GNB from './gnb';
 import WibleLogo from './wible-logo';
 
-// 사이트 최상단 헤더 컴포넌트
+/**
+ * 사이트 최상단 헤더 공통 컴포넌트
+ */
 const Header = () => {
-  const [isScrolled, setIsScrolled] = useState<boolean>(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  // 스크롤이 10px 이상 내려갔을때 True
+  const isScrolled = useScroll(10);
 
   return (
     <header

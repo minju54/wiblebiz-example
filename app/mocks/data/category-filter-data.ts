@@ -1,5 +1,6 @@
 import { ICategoryItem } from '@/app/types/faq';
 
+// 카테고리 데이터
 export const categoryList: ICategoryItem[] = [
   {
     categoryType: 'SERVICE_CONSULT',

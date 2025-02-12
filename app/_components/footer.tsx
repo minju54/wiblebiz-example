@@ -2,6 +2,9 @@ import React from 'react';
 
 import LinkButton from '../FAQ/_components/button/link-button';
 
+/**
+ * 공통 푸터 컴포넌트
+ */
 const Footer = () => {
   return (
     <footer className="relative bottom-0 left-0 bg-midnight-900 px-[var(--side-padding)] text-gray-400">

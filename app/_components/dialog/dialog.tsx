@@ -6,9 +6,9 @@ import { useDialogStore } from '@/app/store/dialog';
 
 /**
  * 다이어로그 컴포넌트
- * @returns
  */
 const Dialog = () => {
+  // zustand를 통해 전역으로 다이얼로그에 대한 상태관리 처리
   const { dialog, isOpenDialog } = useDialogStore();
   const { closeDialog } = useDialogStore((state) => state.actions);
 
