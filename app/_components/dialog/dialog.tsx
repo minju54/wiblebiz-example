@@ -31,7 +31,7 @@ const Dialog = () => {
               className="text-base h-[48px] border border-midnight-900 min-w-[120px] md2:text-lg md2:h-[52px] hover:bg-gray-10"
               onClick={closeDialog}
             >
-              <b>{dialog.closeButtonText}</b>
+              <b>{dialog.closeButtonText ?? '확인'}</b>
             </button>
           </div>
         </div>
