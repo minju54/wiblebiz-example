@@ -1,35 +1,27 @@
 'use client';
 
-import { useEffect, useState } from 'react';
-
+import useScroll from '@/app/hooks/use-scroll';
 import Image from 'next/image';
 
-// 스크롤 시 생기는 플로팅 버튼
+/**
+ * 스크롤 시 생기는 플로팅 버튼
+ */
 const ScrollToTopButton = () => {
-  const [showButton, setShowButton] = useState<boolean>(false);
+  // 스크롤이 300px 이상 내려갔을때 True
+  const isVisibleButton = useScroll(300);
 
+  // 스크롤을 화면 상단으로 올리는 함수
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        setShowButton(true);
-      } else {
-        setShowButton(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <button
       onClick={scrollToTop}
       className={`fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white text-white shadow-lg transition-all duration-300 ${
-        showButton ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+        isVisibleButton
+          ? 'translate-y-0 opacity-100'
+          : 'translate-y-4 opacity-0'
       }`}
     >
       <Image src="/icons/ic_top.svg" alt="ic_top_icon" width={24} height={24} />
