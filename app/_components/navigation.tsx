@@ -27,11 +27,11 @@ const Navigation = ({ isVisibleNav, isOpenAnimating }: NavigationProps) => {
             {NAV_ITEMS.map((item, index) => (
               <a
                 key={index}
-                href="#"
+                href={item.href}
                 onClick={() => setActiveIndex(index)}
                 className={`text-2xl text-gray-800 ${activeIndex === index && 'text-mint-900'}`}
               >
-                <b>{item}</b>
+                <b>{item.name}</b>
               </a>
             ))}
           </li>

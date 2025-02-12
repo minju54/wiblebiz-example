@@ -15,11 +15,11 @@ const GNB = () => {
       {NAV_ITEMS.map((item, index) => (
         <a
           key={index}
-          href="#"
+          href={item.href}
           onClick={() => setActiveIndex(index)}
           className="group relative flex items-center px-2 pb-1 transition-all"
         >
-          <strong>{item}</strong>
+          <strong>{item.name}</strong>
           {activeIndex === index ? (
             <span className="absolute bottom-0 left-0 h-[4px] w-full bg-mint-900" />
           ) : (

@@ -2,7 +2,7 @@ import React from 'react';
 
 interface IconButtonProps {
   buttonType: 'submit' | 'reset' | 'button';
-  onClick: () => void;
+  onClick?: () => void;
   className?: string;
   iconPath: string;
 }
