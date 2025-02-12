@@ -16,7 +16,7 @@ const AppStoreContainer = () => {
   };
 
   return (
-    <div className="mt-[42px] flex flex-col flex-wrap items-center justify-center overflow-hidden rounded-2xl bg-gray-10 p-6 sm:p-8">
+    <section className="mt-[42px] flex flex-col flex-wrap items-center justify-center overflow-hidden rounded-2xl bg-gray-10 p-6 sm:p-8">
       <h2 className="mb-[24px] text-xl">
         <b>
           <span className="font-bold text-mint-900">위블 비즈 App</span> 지금
@@ -45,7 +45,7 @@ const AppStoreContainer = () => {
           App Store
         </LinkButton>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -21,7 +21,7 @@ const ServiceInquiryContainer = () => {
   };
 
   return (
-    <div>
+    <section>
       <TitleHeader title={'서비스 문의'} />
       <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-6 md:flex-nowrap">
         <LinkButton
@@ -58,7 +58,7 @@ const ServiceInquiryContainer = () => {
           </div>
         </LinkButton>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -6,15 +6,17 @@ interface TitleHeaderProps {
 
 const TitleHeader = ({ title }: TitleHeaderProps) => {
   return (
-    <h2
-      className="m-[var(--heading-2-margin)]"
-      style={{
-        fontSize: 'var(--heading-2)',
-        lineHeight: 'var(--line-height-sm)',
-      }}
-    >
-      <b>{title}</b>
-    </h2>
+    <header>
+      <h2
+        className="m-[var(--heading-2-margin)]"
+        style={{
+          fontSize: 'var(--heading-2)',
+          lineHeight: 'var(--line-height-sm)',
+        }}
+      >
+        <b>{title}</b>
+      </h2>
+    </header>
   );
 };
 
