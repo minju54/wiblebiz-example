@@ -2,8 +2,11 @@
 
 import { useEffect, useState } from 'react';
 
-// MSW(Mock Service Worker)를 초기화하고, 초기화가 완료된 후에 자식 컴포넌트를 렌더링
+/**
+ * MSW(Mock Service Worker)를 초기화하고, 초기화가 완료된 후에 자식 컴포넌트를 렌더링
+ */
 const MSWWrapper = ({ children }: { children: React.ReactNode }) => {
+  // 개발 환경에서만 MSW 사용
   const isDev = process.env.NEXT_PUBLIC_API_MOCKING === 'enabled';
 
   const [mswReady, setMswReady] = useState<boolean>(false);

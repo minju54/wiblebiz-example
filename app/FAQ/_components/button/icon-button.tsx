@@ -13,7 +13,6 @@ interface IconButtonProps {
  * @param onClick 클릭 이벤트 함수
  * @param className 추가할 className
  * @param iconPath 아이콘 경로
- * @returns
  */
 const IconButton = ({
   buttonType,

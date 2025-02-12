@@ -8,7 +8,7 @@ interface SearchInfoProps {
 
 /**
  * 검색 결과 정보 컴포넌트
- * @param onReset form reset 함수
+ * @param onReset react-hook-form reset 함수
  */
 const SearchInfo = ({ onReset }: SearchInfoProps) => {
   const { searchResultCount } = useFAQContext();

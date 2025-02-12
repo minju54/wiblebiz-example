@@ -5,6 +5,9 @@ import { categoryList } from '../data/category-filter-data';
 import { serviceConsultList } from '../data/service-consult-list-data';
 import { serviceUsageListData } from '../data/service-usage-list-data';
 
+/**
+ * FAQ 관련 API 핸들러를 모아둠
+ */
 export const faqHandlers = [
   /**
    * 서비스 카테고리 목록 조회
@@ -100,15 +103,4 @@ export const faqHandlers = [
       },
     );
   }),
-
-  // TODOLIST ADD - POST
-  // http.post('/todos', async ({ request }) => {
-  //   const requestData = await request.json();
-  //   const name = requestData?.toString();
-
-  //   const newTodo = { id: todos.length + 1, name };
-  //   todos.push(newTodo);
-
-  //   return HttpResponse.json(todos, { status: 201 });
-  // }),
 ];

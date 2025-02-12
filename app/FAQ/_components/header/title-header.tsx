@@ -4,6 +4,10 @@ interface TitleHeaderProps {
   title: string;
 }
 
+/**
+ * FAQ section 구분을 위한 헤더 컴포넌트
+ * @param title 헤더 타이틀 텍스트
+ */
 const TitleHeader = ({ title }: TitleHeaderProps) => {
   return (
     <header>

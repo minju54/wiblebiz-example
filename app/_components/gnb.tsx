@@ -4,7 +4,9 @@ import React, { useState } from 'react';
 
 import { NAV_ITEMS } from '../constant/menu';
 
-// 헤더 우측에 위치한 GNB 메뉴
+/**
+ * 헤더 우측에 위치한 GNB 메뉴
+ */
 const GNB = () => {
   const [activeIndex, setActiveIndex] = useState<number>(1); // 두 번째 메뉴 활성화
 

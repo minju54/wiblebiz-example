@@ -1,5 +1,8 @@
 import React from 'react';
 
+/**
+ * FAQ Header 컴포넌트
+ */
 const FAQHeader = () => {
   return (
     <header className="flex h-[var(--h1-height)] flex-col items-center justify-center">

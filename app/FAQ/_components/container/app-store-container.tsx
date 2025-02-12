@@ -1,19 +1,17 @@
 import React from 'react';
 
+import { APP_STORE_URL } from '@/app/constant/url';
+
 import LinkButton from '../button/link-button';
 
-// 앱 스토어 안내 컴포넌트
+/**
+ * 앱 스토어 안내 컴포넌트
+ * - 구글 플레이스토어, 앱스토어 링크를 포함
+ */
 const AppStoreContainer = () => {
   const linkButtonClassName =
     'flex items-center min-h-[48px] w-[264px] flex-1 justify-center rounded-lg border-none bg-white text-sm font-semibold sm:h-[56px] sm:text-base md:w-[296px]';
   const iconClassName = 'w-[24px] sm:w-[28px]';
-
-  const APP_STORE_URL = {
-    googlePlay:
-      'https://play.google.com/store/apps/details?id=kor.mop.user.app',
-    appStore:
-      'https://apps.apple.com/kr/app/%EC%9C%84%EB%B8%94-%EB%B9%84%EC%A6%88/id1598065794',
-  };
 
   return (
     <section className="mt-[42px] flex flex-col flex-wrap items-center justify-center overflow-hidden rounded-2xl bg-gray-10 p-6 sm:p-8">
@@ -30,7 +28,6 @@ const AppStoreContainer = () => {
           className={linkButtonClassName}
           iconClassName={iconClassName}
           href={APP_STORE_URL.googlePlay}
-          target="_blank"
         >
           Google Play
         </LinkButton>
@@ -40,7 +37,6 @@ const AppStoreContainer = () => {
           className={linkButtonClassName}
           iconClassName={iconClassName}
           href={APP_STORE_URL.appStore}
-          target="_blank"
         >
           App Store
         </LinkButton>

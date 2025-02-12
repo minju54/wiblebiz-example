@@ -60,13 +60,11 @@ export const ServiceSearch = () => {
       showDialog({
         content: '검색어는 2글자 이상 입력해주세요.',
       });
-      // setShowDoalog(true);
       return;
     }
     setSearchQuestion(searchTerm ?? null);
   };
 
-  // TODO 검색어는 두 글자 입력해주세요
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="flex flex-col">
       <div className="mb-5 flex justify-center bg-gray-10 p-4">
