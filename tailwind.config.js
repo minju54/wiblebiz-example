@@ -27,6 +27,20 @@ module.exports = {
         md2: '1060px', // 1060px 이상
         lg: '1440px', // 1440px 이상
       },
+      keyframes: {
+        expandFromLeft: {
+          '0%': { transform: 'scaleX(0)', transformOrigin: 'left' },
+          '100%': { transform: 'scaleX(1)', transformOrigin: 'left' },
+        },
+        shrinkToLeft: {
+          '0%': { transform: 'scaleX(1)', transformOrigin: 'left' },
+          '100%': { transform: 'scaleX(0)', transformOrigin: 'left' },
+        },
+      },
+      animation: {
+        expandFromLeft: 'expandFromLeft 0.5s ease-out forwards',
+        shrinkToLeft: 'shrinkToLeft 0.5s ease-out forwards',
+      },
     },
   },
   plugins: [],
