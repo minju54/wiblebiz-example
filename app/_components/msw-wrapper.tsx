@@ -28,7 +28,13 @@ const MSWWrapper = ({ children }: { children: React.ReactNode }) => {
     return null; // MSW가 초기화될 때까지 아무것도 렌더링하지 않음
   }
 
-  if (!isDev) return null;
+  if (!isDev) return <>{children}</>; // 개발 환경이 아니면 바로 children 렌더링
+
+  if (typeof window === 'undefined') {
+    // 서버 사이드 렌더링 시점에서는 바로 children 렌더링
+    return <>{children}</>;
+  }
+
   return <>{children}</>;
 };
 
