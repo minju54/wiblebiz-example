@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { useGetInfiniteQuery } from '@/app/hooks/use-get-infinite-query';
 import { IFaqServiceResponse } from '@/app/types/faq';
@@ -24,6 +24,8 @@ const FAQList = () => {
       queryKey: ['faqList'],
       endpoint: `/api/faq?tab=${selectedTab.id}&faqCategoryID=${selectedCategory ? selectedCategory.categoryID : ''}&question=${searchQuestion ?? ''}`,
     });
+
+  const [expandedItemId, setExpandedItemId] = useState<number | null>(null);
 
   // 더보기 버튼
   const MoreButton = () => (
@@ -53,22 +55,24 @@ const FAQList = () => {
 
   return (
     <div>
-      <ul className="border-t-2 border-midnight-900">
+      <div className="border-t-2 border-midnight-900">
         {data?.pages.map((page, index) => (
-          <div key={index}>
-            {/* {page.items.map((faqItem, index) => (
-              <FaqListItem key={index} index={index} faqItem={faqItem} />
-            ))} */}
+          <ul key={index}>
             {page.items.length > 0 ? (
               page.items.map((faqItem, index) => (
-                <FaqListItem key={index} index={index} faqItem={faqItem} />
+                <FaqListItem
+                  key={index}
+                  faqItem={faqItem}
+                  expandedItemId={expandedItemId}
+                  setExpandedItemId={setExpandedItemId}
+                />
               ))
             ) : (
               <NoSearchResult />
             )}
-          </div>
+          </ul>
         ))}
-      </ul>
+      </div>
       {hasNextPage && <MoreButton />}
     </div>
   );

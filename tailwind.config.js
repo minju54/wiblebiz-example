@@ -36,10 +36,20 @@ module.exports = {
           '0%': { transform: 'scaleX(1)', transformOrigin: 'left' },
           '100%': { transform: 'scaleX(0)', transformOrigin: 'left' },
         },
+        expandFromTop: {
+          '0%': { height: '0', opacity: '0', transform: 'translateY(-20px)' },
+          '100%': { height: 'auto', opacity: '1', transform: 'translateY(0)' },
+        },
+        shrinkToTop: {
+          '0%': { height: 'auto', opacity: '1', transform: 'translateY(0)' },
+          '100%': { height: '0', opacity: '0', transform: 'translateY(-20px)' },
+        },
       },
       animation: {
         expandFromLeft: 'expandFromLeft 0.5s ease-out forwards',
         shrinkToLeft: 'shrinkToLeft 0.5s ease-out forwards',
+        expandFromTop: 'expandFromTop 0.7s ease-in-out forwards',
+        shrinkToTop: 'shrinkToTop 0.7s ease-in-out forwards',
       },
     },
   },

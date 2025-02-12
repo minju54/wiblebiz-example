@@ -17,12 +17,14 @@ const ScrollToTopButton = () => {
 
   return (
     <button
+      type="button"
       onClick={scrollToTop}
       className={`fixed bottom-6 right-6 z-50 flex h-12 w-12 items-center justify-center rounded-full bg-white text-white shadow-lg transition-all duration-300 ${
         isVisibleButton
           ? 'translate-y-0 opacity-100'
           : 'translate-y-4 opacity-0'
       }`}
+      aria-label="위로 스크롤 올리기"
     >
       <Image src="/icons/ic_top.svg" alt="ic_top_icon" width={24} height={24} />
     </button>

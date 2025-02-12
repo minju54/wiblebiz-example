@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import { useGetQuery } from '@/app/hooks/use-get-query';
 import { ICategoryItem } from '@/app/types/faq';
@@ -28,10 +28,6 @@ const SearchFilter = () => {
   const handleClickCategory = (selectedCategory: ICategoryItem | null) => {
     setSelectedCategory(selectedCategory);
   };
-
-  useEffect(() => {
-    console.log('selectedCategory', selectedCategory);
-  }, [selectedCategory]);
 
   return (
     <div className="mb-[var(--px-md)] flex flex-wrap">

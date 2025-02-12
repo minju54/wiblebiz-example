@@ -25,7 +25,6 @@ const FAQTabContainer = () => {
     setSearchQuestion(null);
   };
 
-  // TODO 데이터 가져오기 전에 영역 크기 Suspend
   return (
     <Tabs.Root defaultValue={TAB_LIST[0].id}>
       <Tabs.List className="mb-[var(--px-lg)] flex" aria-label="service-tab">
@@ -33,7 +32,8 @@ const FAQTabContainer = () => {
           <Tabs.Trigger
             key={index}
             value={tabItem.id}
-            className={`w-full border p-2 font-bold data-[state=active]:border-midnight-900 data-[state=active]:bg-midnight-900 data-[state=active]:text-white`}
+            className={`w-full border p-2 font-bold data-[state=active]:border-midnight-900 data-[state=active]:bg-midnight-900 data-[state=active]:text-white
+              h-[40px] sm:h-[48px] md:h-[56px]`}
             onClick={() => handleClickTab(tabItem)}
           >
             {tabItem.name}
