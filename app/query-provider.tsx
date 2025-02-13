@@ -3,7 +3,8 @@
 import React, { ReactNode } from 'react';
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
+
+// import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 
 // 전역적으로 사용할 QueryClient 인스턴스 생성
 const queryClient = new QueryClient();

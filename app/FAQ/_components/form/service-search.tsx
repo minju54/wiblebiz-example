@@ -58,9 +58,12 @@ export const ServiceSearch = () => {
   // 검색 버튼 클릭
   const onSubmit = () => {
     setSearchQuestion(searchTerm ?? null);
-    searchTerm && searchTerm?.length > 0
-      ? setIsVisibleSearchInfo(true)
-      : setIsVisibleSearchInfo(false);
+
+    if (searchTerm && searchTerm?.length > 0) {
+      setIsVisibleSearchInfo(true);
+    } else {
+      setIsVisibleSearchInfo(false);
+    }
   };
 
   // 검색 유효성 검사 실패
