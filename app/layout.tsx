@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import '../public/fonts/styles.css';
+import ScrollToTopButton from './_components/button/scroll-to-top-button';
 import Dialog from './_components/dialog/dialog';
 import Footer from './_components/footer';
 import Header from './_components/header';
@@ -34,6 +35,8 @@ export default function RootLayout({
               {children}
             </MSWWrapper>
           </main>
+          {/* 위로가기 floating 버튼 */}
+          <ScrollToTopButton />
           {/* 전역 푸터 컴포넌트 */}
           <Footer />
         </QueryProvider>

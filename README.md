@@ -199,3 +199,218 @@ npm run start
 ┃ ┗ 📜logo_wible_sm.svg
 ┗ 📜mockServiceWorker.js
 ```
+
+<table>
+  <tr>
+    <th>폴더/파일명</th>
+    <th>설명</th>
+  </tr>
+  <tr>
+    <td>📦app</td>
+    <td></td>
+  </tr>
+   <tr>
+    <td>┣ 📂FAQ</td>
+    <td>FAQ 페이지에 해당하는 모든 컴포넌트가 들어있음</td>
+  </tr>
+  <tr>
+    <td>┃ ┣ 📂_components</td>
+    <td>모든 컴포넌트들이 들어있는 폴더</td>
+  </tr>
+  <tr>
+    <td>┃ ┃ ┣ 📂button</td>
+    <td>FAQ 페이지에서 공통적으로 사용되는 버튼 컴포넌트</td>
+  </tr>
+  <tr>
+    <td>┃ ┃ ┃ ┣ 📜icon-button.tsx</td>
+    <td>아이콘 모양의 공통 버튼</td>
+  </tr>
+  <tr>
+    <td>┃ ┃ ┃ ┗ 📜link-button.tsx</td>
+    <td>링크를 가진 공통 버튼</td>
+  </tr>
+  <tr>
+    <td>┃ ┃ ┣ 📂container</td>
+    <td></td>
+    <td>2개 이상의 컴포넌트로 이루어진 컨테이너</td>
+  </tr>
+  <tr>
+<table>
+
+<table>
+  <tr>
+    <th>폴더명</th>
+    <th>파일명</th>
+    <th>설명</th>
+  </tr>
+  <tr>
+    <td>app</td>
+    <td></td>
+    <td></td>
+  </tr>
+  <tr>
+    <td>┣ 📂FAQ</td>
+    <td></td>
+    <td>FAQ 페이지에 해당하는 모든 컴포넌트가 들어있음</td>
+  </tr>
+  <tr>
+    <td>┃ ┣ 📂_components</td>
+    <td></td>
+    <td>FAQ 페이지의 모든 컴포넌트 폴더</td>
+  </tr>
+  <tr>
+    <td>┃ ┃ ┣ 📂button</td>
+    <td></td>
+    <td>FAQ 페이지 공통 버튼 컴포넌트</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>📜icon-button.tsx</td>
+    <td>아이콘 모양의 공통 버튼</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>📜link-button.tsx</td>
+    <td>링크를 가진 공통 버튼</td>
+  </tr>
+  <tr>
+    <td>┃ ┃ ┣ 📂container</td>
+    <td></td>
+    <td>여러 개의 컴포넌트로 구성된 컨테이너</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>📜app-store-container.tsx</td>
+    <td>앱 스토어 영역 컨테이너</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>📜faq-tab-container.tsx</td>
+    <td>탭 영역 컨테이너</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>📜process-information-container.tsx</td>
+    <td>이용 안내 영역 컨테이너</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>📜service-inquiry-container.tsx</td>
+    <td>서비스 문의 영역 컨테이너</td>
+  </tr>
+  <tr>
+    <td>┃ ┃ ┣ 📂context</td>
+    <td></td>
+    <td>Context API 관련 폴더</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>📜faq-context-provider.tsx</td>
+    <td>FAQ 페이지의 컨텍스트 프로바이더</td>
+  </tr>
+  <tr>
+    <td>┃ ┃ ┣ 📂form</td>
+    <td></td>
+    <td>Form 관련 컴포넌트 폴더</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>📜search-info.tsx</td>
+    <td>서비스 검색바 하단 검색 정보</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>📜service-search.tsx</td>
+    <td>서비스 검색바 컴포넌트</td>
+  </tr>
+  <tr>
+    <td>┃ ┃ ┣ 📂header</td>
+    <td></td>
+    <td>헤더 관련 컴포넌트 폴더</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>📜faq-header.tsx</td>
+    <td>FAQ 상단 헤더</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>📜title-header.tsx</td>
+    <td>컨테이너 헤더 컴포넌트</td>
+  </tr>
+  <tr>
+    <td> </td>
+    <td>📜faq-list-item.tsx</td>
+    <td>FAQ 탭 리스트 아이템</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>📜faq-list.tsx</td>
+    <td>FAQ 탭 리스트</td>
+  </tr>
+  <tr>
+    <td> </td>
+    <td>📜no-search-result.tsx</td>
+    <td>검색 결과 없음 컴포넌트</td>
+  </tr>
+  <tr>
+    <td> </td>
+    <td>📜process-item.tsx</td>
+    <td>이용 안내 아이템</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>📜search-filter.tsx</td>
+    <td>검색 필터 컴포넌트</td>
+  </tr>
+  <tr>
+    <td> </td>
+    <td>📜layout.tsx</td>
+    <td>FAQ 페이지 전체 레이아웃</td>
+  </tr>
+  <tr>
+    <td> </td>
+    <td>📜page.tsx</td>
+    <td>FAQ 페이지 진입 시 렌더링되는 페이지</td>
+  </tr>
+  <tr>
+    <td>┣ 📂_components</td>
+    <td></td>
+    <td>모든 페이지에서 공통적으로 사용하는 컴포넌트 폴더</td>
+  </tr>
+  <tr>
+    <td>┣ 📂constant</td>
+    <td></td>
+    <td>상수 모음 폴더</td>
+  </tr>
+  <tr>
+    <td>┣ 📂hooks</td>
+    <td></td>
+    <td>공통적으로 사용하는 커스텀 훅 폴더</td>
+  </tr>
+  <tr>
+    <td>┣ 📂mocks</td>
+    <td></td>
+    <td>로컬 MOCK 서버 관련 폴더</td>
+  </tr>
+  <tr>
+    <td>┣ 📂store</td>
+    <td></td>
+    <td>상태 관리 관련 폴더</td>
+  </tr>
+  <tr>
+    <td>┣ 📂types</td>
+    <td></td>
+    <td>데이터 타입 정의 폴더</td>
+  </tr>
+  <tr>
+    <td>┣ 📜favicon.ico</td>
+    <td></td>
+    <td>파비콘 파일</td>
+  </tr>
+  <tr>
+    <td>┣ 📜globals.css</td>
+    <td></td>
+  </tr>
+
+</table>

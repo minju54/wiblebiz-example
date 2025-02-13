@@ -1,6 +1,5 @@
 import React from 'react';
 
-import ScrollToTopButton from '../_components/button/scroll-to-top-button';
 import AppStoreContainer from './_components/container/app-store-container';
 import FAQTabContainer from './_components/container/faq-tab-container';
 import ProcessInformationContainer from './_components/container/process-information-container';
@@ -24,8 +23,6 @@ export default function FAQPage() {
       <ProcessInformationContainer />
       {/* 앱 스토어 이동 */}
       <AppStoreContainer />
-      {/* 위로가기 floating 버튼 */}
-      <ScrollToTopButton />
     </FAQContextProvider>
   );
 }
