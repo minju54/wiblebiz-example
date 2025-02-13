@@ -1,8 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 
 import { NAV_ITEMS } from '../constant/menu';
+import useMenuStore from '../store/menu';
 
 interface NavigationProps {
   isVisibleNav: boolean;
@@ -13,7 +14,8 @@ interface NavigationProps {
  * 헤더 우측 햄버거 버튼 클릭 시 나오는 네비게이션 메뉴
  */
 const Navigation = ({ isVisibleNav, isOpenAnimating }: NavigationProps) => {
-  const [activeIndex, setActiveIndex] = useState<number>(1); // 두 번째 메뉴 활성화
+  // 선택된 GnB 메뉴
+  const { selectedGnbMenuId, setSelectedGnbMenuId } = useMenuStore();
 
   return (
     <nav>
@@ -28,8 +30,8 @@ const Navigation = ({ isVisibleNav, isOpenAnimating }: NavigationProps) => {
               <a
                 key={index}
                 href={item.href}
-                onClick={() => setActiveIndex(index)}
-                className={`text-2xl text-gray-800 ${activeIndex === index && 'text-mint-900'}`}
+                onClick={() => setSelectedGnbMenuId(item.id)}
+                className={`text-2xl text-gray-800 ${selectedGnbMenuId === item.id && 'text-mint-900'}`}
               >
                 <b>{item.name}</b>
               </a>
