@@ -21,6 +21,7 @@ interface IDialogState {
 export const useDialogStore = create<IDialogState>((set) => ({
   dialog: null,
   isOpenDialog: false,
+  // Dialog 상태 변경 함수
   actions: {
     showDialog: (props: IDialog) =>
       set({
